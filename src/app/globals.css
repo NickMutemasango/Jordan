@@ -1,0 +1,14 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+@font-face {
+    font-family:'pro';
+    src: url('./fonts/StretchPro.otf');
+}
+
+@font-face {
+  font-family: 'mortend';
+  src: url('./fonts/Mortend\ Extra\ Bold\ Outline.otf');
+}
