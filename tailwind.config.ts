@@ -9,22 +9,23 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        orange:'#FE6332',
-        gray:'#EEEEEE',
+        orange: "#FE6332",
+        gray: "#EEEEEE",
+        blue: "#82A0BF",
+        grey:"#D8D8D8"
       },
-      fontFamily:{
-        stretch:['pro'],
-        outline:['mortend'],
+      fontFamily: {
+        stretch: ["pro"],
+        outline: ["mortend"],
       },
-      backgroundImage:{
-        user1:"url('../Images/home2.svg')",
-        user2:"url('../Images/user2.svg')",
-        user3:"url('../Images/user3.svg')",
-        small:"url('../Images/small.svg')",
-      }
-     
+      backgroundImage: {
+        user1: "url('../Images/home2.svg')",
+        user2: "url('../Images/user2.svg')",
+        user3: "url('../Images/user3.svg')",
+        small: "url('../Images/small.svg')",
+       
+      },
     },
-
   },
   plugins: [],
 };

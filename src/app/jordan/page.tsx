@@ -1,12 +1,24 @@
+"use client"
+
 import React from "react";
 import Image from "next/image";
 import Home from "../../Images/Home.svg";
+import { motion } from "framer-motion";
+import { fadeIn } from "../../../variants";
+import Shadow from '../../Images/shadow.svg'
 
 const page = () => {
   return (
-    <div className="flex flex-col md:flex-row">
-      <div className="md:w-1/2">
+    <motion.div
+      variants={fadeIn("left", 1)}
+      initial="hidden"
+      animate="show"
+      exit="hidden"
+      className="flex flex-col md:flex-row"
+    >
+      <div className="md:w-1/2 md:relative flex flex-col ">
         <Image src={Home} alt="" />
+        <Image src={Shadow} alt="" className="hidden md:flex md:w-[80%] md:absolute md:bottom-0 md:right-5"/>
       </div>
       <div className="px-4 md:w-1/2 md:pt-10 xl:pt-16 space-y-3">
         <h1 className="font-bold text-5xl">AIR JORDAN</h1>
@@ -26,10 +38,12 @@ const page = () => {
           <div className="bg-gray px-6 py-2 rounded-lg">M9/W12</div>
         </div>
         <div className="flex justify-center pt-6">
-          <button className="bg-black w-[90%] text-white py-2 xl:w-[80%] rounded-2xl">Add to Bag</button>
+          <button className="bg-black w-[90%] text-white py-2 xl:w-[80%] rounded-2xl">
+            Add to Bag
+          </button>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

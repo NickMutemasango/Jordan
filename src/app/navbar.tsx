@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 import React, { useState } from "react";
 import Image from "next/image";
@@ -15,8 +15,12 @@ const Navbar = () => {
     setIsOpen(!isOpen);
   };
 
+  const closeMenu = () => {
+    setIsOpen(false); // Close the menu after a link is clicked
+  };
+
   return (
-    <div className="flex justify-between items-center py-4 shadow-xl px-4 md:px-8 z-50">
+    <div className="flex justify-between items-center py-4 shadow-xl px-4 md:px-8 ">
       {/* Logo */}
       <div>
         <Image src={LOGO} alt="Logo" className="w-[70%]" />
@@ -37,23 +41,27 @@ const Navbar = () => {
       <div
         className={`${
           isOpen ? "block" : "hidden"
-        } md:flex space-x-5 absolute md:static top-[70px] right-0 bg-white md:bg-transparent p-5 md:p-0 md:space-x-5 w-full md:w-auto`}
+        } md:flex-row md:flex flex flex-col z-50 space-y-5 md:space-y-0 items-center absolute md:static top-[70px] right-0 bg-gray md:bg-transparent p-5 md:p-0 md:space-x-5 w-full md:w-auto`}
       >
-        <Link href="/" className="hover:text-orange font-bold text-lg">
+        <Link href="/" className="hover:text-orange font-bold text-lg" onClick={closeMenu}>
           Home
         </Link>
-        <Link href="/jordan" className="hover:text-orange font-bold text-lg">
+        <Link href="/jordan" className="hover:text-orange font-bold text-lg" onClick={closeMenu}>
           Jordan
         </Link>
-        <Link href="/sales" className="hover:text-orange font-bold text-lg">
+        <Link href="/sales" className="hover:text-orange font-bold text-lg" onClick={closeMenu}>
           Sale
         </Link>
+        <div className="flex space-x-4 md:hidden">
+          <Image src={Cart} alt="Cart" className="w-[25px]" />
+          <Image src={Profile} alt="Profile" className="w-[25px]" />
+        </div>
       </div>
 
-      {/* Icons (always visible) */}
-      <div className="flex space-x-4">
-        <Image src={Cart} alt="Cart" className="w-[25px]" />
-        <Image src={Profile} alt="Profile" className="w-[25px]" />
+     
+      <div className="hidden md:flex space-x-4">
+        <Image src={Cart} alt="Cart" className="w-[25px] " />
+        <Image src={Profile} alt="Profile" className="w-[25px] " />
       </div>
     </div>
   );
